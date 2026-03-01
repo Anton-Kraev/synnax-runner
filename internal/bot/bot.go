@@ -205,7 +205,7 @@ func (b *Bot) handleTimeoutInput(c telebot.Context) error {
 	}
 
 	// Проверяем разумные пределы (от 30 секунд до 1 часа)
-	if timeout < 30 || timeout > 3600 {
+	if timeout < 30 || timeout > 86400 {
 		return c.Send("❌ Таймаут должен быть от 30 секунд до 1 часа (3600 секунд).")
 	}
 
