@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  synnax-runner:
+    build: .
+    container_name: synnax-runner
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./scripts:/app/scripts
+    restart: unless-stopped
+    networks:
+      - synnax-network
+
+networks:
+  synnax-network:
+    driver: bridge
